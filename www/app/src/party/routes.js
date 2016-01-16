@@ -3,11 +3,22 @@
   "use strict";
 
   function PartyRouterConfig($stateProvider) {
-    $stateProvider.state("app.party", {
-      url: "/party",
-      templateUrl: "/static/party/views/party/party.html",
-      controller: "PartyController"
-    });
+    $stateProvider
+      .state("app.party", {
+        url: "/party",
+        templateUrl: "/static/party/views/party/party.html",
+        controller: "PartyController"
+      })
+      .state("app.party.bridesmaids", {
+        url: "/bridesmaids",
+        templateUrl: "/static/party/views/bridesmaids/bridesmaids.html",
+        controller: "BridesmaidsController"
+      })
+      .state("app.party.groomsmen", {
+        url: "/groomsmen",
+        templateUrl: "/static/party/views/groomsmen/groomsmen.html",
+        controller: "GroomsmenController"
+      });
   }
 
   angular.module("app")
