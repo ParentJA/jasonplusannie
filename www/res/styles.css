@@ -255,3 +255,10 @@ body {
 .timeline-body > p + p {
   margin-top: 5px;
 }
+
+.center-cropped {
+  object-fit: cover;
+  object-position: center;
+  height: 300px;
+  width: 300px;
+}

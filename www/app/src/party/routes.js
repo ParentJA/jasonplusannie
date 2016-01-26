@@ -2,7 +2,7 @@
 
   "use strict";
 
-  function PartyRouterConfig($stateProvider) {
+  function PartyRouterConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state("app.party", {
         url: "/party",
