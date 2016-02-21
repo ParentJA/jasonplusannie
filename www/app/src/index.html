@@ -41,12 +41,15 @@
         <li ng-class="{active: $state.includes('app.city')}">
           <a href ui-sref="app.city">City</a>
         </li>
+        <li ng-class="{active: $state.includes('app.registry')}">
+          <a href ui-sref="app.registry">Registry</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 <div class="container">
-  <div ui-view></div>
+  <div ui-view autoscroll="true"></div>
 </div>
 <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
 <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
