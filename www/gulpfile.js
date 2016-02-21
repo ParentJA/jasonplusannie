@@ -11,7 +11,7 @@ var uglify = require("gulp-uglify");
 var Server = karma.Server;
 
 gulp.task("clean", function () {
-  return del(["./app/dist/scripts.js"]);
+  return del(["./dist/scripts.js"]);
 });
 
 gulp.task("scripts", ["clean"], function () {
