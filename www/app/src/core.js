@@ -35,8 +35,22 @@
     });
   }
 
-  function MainController($scope, navigationService) {
+  function MainController($scope, $uibModal, navigationService) {
     $scope.navigationService = navigationService;
+
+    $scope.openRsvp = function openRsvp() {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: "rsvp/views/rsvp/rsvp.html",
+        controller: "RsvpController"
+      });
+
+      modalInstance.result.then(submitRsvp);
+    };
+
+    function submitRsvp(data) {
+
+    }
   }
 
   angular.module("app", ["ngAnimate", "ngCookies", "ngSanitize", "ui.bootstrap", "ui.router"])
@@ -44,6 +58,6 @@
     .config(["$httpProvider", HttpConfig])
     .config(["$locationProvider", "$stateProvider", "$urlRouterProvider", "$uiViewScrollProvider", UiRouterConfig])
     .run(["$anchorScroll", "$location", "$rootScope", "$state", "navigationService", UiRunner])
-    .controller("MainController", ["$scope", "navigationService", MainController]);
+    .controller("MainController", ["$scope", "$uibModal", "navigationService", MainController]);
 
 })(window, window.angular);

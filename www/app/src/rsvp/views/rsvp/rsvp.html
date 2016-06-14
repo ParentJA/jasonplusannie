@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <button class="close" type="button" ng-click="cancel()">&times;</button>
+  <h4 class="modal-title">RSVP</h4>
+</div>
+<div class="modal-body">
+  <form name="rsvp" novalidate>
+    <div class="form-group">
+      <label>Name:</label>
+      <input class="form-control" type="text" ng-value="models.name" ng-model="models.name" required>
+    </div>
+    <label class="radio-inline">
+      <input type="radio" name="is_attending" ng-value="true" ng-model="models.is_attending"> Accepts
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="is_attending" ng-value="false" ng-model="models.is_attending"> Declines
+    </label>
+    <div class="form-group">
+      <label>Number attending:</label>
+      <input class="form-control" type="number" ng-value="models.num_attending" ng-model="models.num_attending" required>
+    </div>
+    <div class="form-group">
+      <label>Steak:</label>
+      <input class="form-control" type="number" ng-value="models.num_steak" ng-model="models.num_steak" required>
+    </div>
+    <div class="form-group">
+      <label>Fish:</label>
+      <input class="form-control" type="number" ng-value="models.num_fish" ng-model="models.num_fish" required>
+    </div>
+    <button class="btn btn-primary btn-block" type="submit" ng-click="ok()" ng-disabled="rsvp.$invalid">Continue</button>
+  </form>
+</div>
