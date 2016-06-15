@@ -45,7 +45,9 @@ THIRD_PARTY_APPS = (
     'rest_framework',
 )
 
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'rsvp',
+)
 
 INSTALLED_APPS = ('grappelli',) + DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -89,7 +91,7 @@ WSGI_APPLICATION = 'jasonplusannie.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '../database/db.sqlite3'),
     }
 }
 

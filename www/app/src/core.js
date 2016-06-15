@@ -35,13 +35,13 @@
     });
   }
 
-  function MainController($scope, $uibModal, navigationService) {
+  function MainController($scope, $uibModal, navigationService, rsvpService) {
     $scope.navigationService = navigationService;
 
     $scope.openRsvp = function openRsvp() {
       var modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: "rsvp/views/rsvp/rsvp.html",
+        templateUrl: "/static/rsvp/views/rsvp/rsvp.html",
         controller: "RsvpController"
       });
 
@@ -49,7 +49,7 @@
     };
 
     function submitRsvp(data) {
-
+      rsvpService(data);
     }
   }
 
@@ -58,6 +58,6 @@
     .config(["$httpProvider", HttpConfig])
     .config(["$locationProvider", "$stateProvider", "$urlRouterProvider", "$uiViewScrollProvider", UiRouterConfig])
     .run(["$anchorScroll", "$location", "$rootScope", "$state", "navigationService", UiRunner])
-    .controller("MainController", ["$scope", "$uibModal", "navigationService", MainController]);
+    .controller("MainController", ["$scope", "$uibModal", "navigationService", "rsvpService", MainController]);
 
 })(window, window.angular);
