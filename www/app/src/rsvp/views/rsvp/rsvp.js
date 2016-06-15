@@ -8,7 +8,10 @@
       is_attending: true,
       num_attending: 0,
       num_steak: 0,
-      num_fish: 0
+      num_fish: 0,
+      num_vegetarian: 0,
+      num_children: 0,
+      is_brunch: true
     };
 
     $scope.rsvp = null;

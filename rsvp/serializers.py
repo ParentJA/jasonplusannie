@@ -13,4 +13,5 @@ class RsvpSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Rsvp
-        fields = ('id', 'name', 'is_attending', 'num_attending', 'num_steak', 'num_fish')
+        fields = ('id', 'name', 'is_attending', 'num_attending', 'num_steak', 'num_fish', 'num_vegetarian',
+                  'num_children', 'is_brunch')
